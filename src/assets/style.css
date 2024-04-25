@@ -1,0 +1,45 @@
+.palette{
+    height: 200px;
+    width: fit-content;
+    padding-bottom: 50px;
+}
+
+.color{
+    display: flex;
+}
+
+.wrap{
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.icon{
+    background-color: transparent; 
+    height: 12px;
+    width: auto; 
+    border: none;
+    padding: auto;
+    outline: none; 
+    font-size: 22px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.icon:focus{
+    outline: none; 
+}
+
+ul, ol {
+    list-style-type: none; 
+}
+
+.sliderContainer{
+    width: 200px;
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
