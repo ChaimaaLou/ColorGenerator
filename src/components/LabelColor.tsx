@@ -8,8 +8,8 @@ const LabelColor: React.FC<LabelColorProps> = ({ color, hexValue }) => {
   return (
     <label
       style={{
-        width: "52px",
-        height: "42px",
+        width: "53px",
+        height: "40px",
         borderRadius: "50%",
         backgroundColor: hexValue,
         display: "flex",
@@ -18,7 +18,7 @@ const LabelColor: React.FC<LabelColorProps> = ({ color, hexValue }) => {
         fontSize: "14px",
         color: "white",
         textAlign: "center",
-        marginRight: "10px",
+        marginRight: "5px",
       }}
     >
       {color}

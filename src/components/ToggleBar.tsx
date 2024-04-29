@@ -8,7 +8,6 @@ interface ToggleBarProps {
   onChange: (newValue: string) => void;
 }
 
-//child component
 const ToggleBar: React.FC<ToggleBarProps> = ({ initialValue, onChange }) => {
   const [sliderValue, setSliderValue] = useState(initialValue);
   const decimalNumber: number = hexToDecimal(sliderValue);

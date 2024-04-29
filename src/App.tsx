@@ -6,7 +6,7 @@ function App() {
   const testColor: string = "#ffbffc";
   return (
     <div className="App">
-      {/* <Palette />
+      {/* <Palette /> 
       <Palette /> */}
       <ColorSelector color={testColor} />
     </div>

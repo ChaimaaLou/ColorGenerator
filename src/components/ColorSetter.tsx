@@ -1,19 +1,25 @@
 import useColorSlider from "../hooks/useColorSlider";
 import LabelColor from "./LabelColor";
 import ToggleBar from "./ToggleBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../assets/style.css";
 
-//parent component
+//child component
 export default function ColorSetter({
   colorName,
   colorHex,
+  onChange,
 }: {
   colorName: string;
   colorHex: string;
+  onChange: (newValue: string) => void;
 }) {
   const [sliderValue, setSliderValue] = useState(colorHex);
   const { hexColor } = useColorSlider(colorName, sliderValue);
+
+  useEffect(() => {
+    onChange(sliderValue);
+  }, [sliderValue, onChange]);
 
   return (
     <div className="sliderContainer">
