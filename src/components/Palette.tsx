@@ -3,8 +3,8 @@ import "../assets/style.css";
 import useCrDelColor from "../hooks/useCrDelColor";
 
 const Palette = () => {
-  const { colors, addColor, removeColor } = useCrDelColor();
-
+  const { colors, addRandomColor, removeColor } = useCrDelColor();
+  console.log(colors);
   return (
     <div className="palette">
       <ul style={{ display: "flex", height: "100%" }}>
@@ -18,7 +18,7 @@ const Palette = () => {
           </li>
         ))}
       </ul>
-      <button onClick={addColor}>Add Color</button>
+      <button onClick={addRandomColor}>Add Color</button>
     </div>
   );
 };

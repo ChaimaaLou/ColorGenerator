@@ -5,7 +5,13 @@ import Col from "react-bootstrap/Col";
 import { useEffect, useState } from "react";
 
 //parent component
-function ColorSelector({ color }: { color: string }) {
+function ColorSelector({
+  color,
+  onChangeColor,
+}: {
+  color: string;
+  onChangeColor: (color: string) => void;
+}) {
   const [testingColor, setTestingColor] = useState(color);
   const [substring1, setSubstring1] = useState(testingColor.substring(1, 3));
   const [substring2, setSubstring2] = useState(testingColor.substring(3, 5));
@@ -49,6 +55,7 @@ function ColorSelector({ color }: { color: string }) {
               textAlign: "center",
               marginRight: "10px",
             }}
+            onClick={() => onChangeColor(testingColor)}
           >
             {testingColor}
           </button>

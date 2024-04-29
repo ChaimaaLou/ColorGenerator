@@ -4,12 +4,16 @@ import { getRandomColor } from "../assets/getRandomColor";
 const useUpdateColor = (color: string) => {
   const [color2, setColor] = useState(color);
 
-  const newColor = () => {
+  const newRandomColor = () => {
     const newColorValue = getRandomColor();
     setColor(newColorValue);
   };
 
-  return { color2, newColor };
+  const newColor = (color: string) => {
+    setColor(color);
+  };
+
+  return { color2, newRandomColor, newColor };
 };
 
 export default useUpdateColor;

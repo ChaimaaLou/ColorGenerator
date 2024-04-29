@@ -12,11 +12,17 @@ const useCrDelColor = (initialColors?: Array<string>) => {
     setColors(updatedColors);
   };
 
-  const addColor = () => {
+  const addRandomColor = () => {
     setColors([...colors, getRandomColor()]);
   };
 
-  return { colors, removeColor, addColor };
+  const addColor = ({ color }: { color: string }) => {
+    setColors([...colors, color]);
+  };
+
+  console.log(colors);
+
+  return { colors, removeColor, addRandomColor, addColor };
 };
 
 export default useCrDelColor;
