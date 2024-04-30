@@ -31,12 +31,12 @@ function ColorSelector({
             onChange={setSubstring1}
           />
           <ColorSetter
-            colorName="Blue"
+            colorName="Green"
             colorHex={substring2}
             onChange={setSubstring2}
           />
           <ColorSetter
-            colorName="Green"
+            colorName="Blue"
             colorHex={substring3}
             onChange={setSubstring3}
           />

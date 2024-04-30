@@ -4,7 +4,6 @@ import ToggleBar from "./ToggleBar";
 import { useEffect, useState } from "react";
 import "../assets/style.css";
 
-//child component
 export default function ColorSetter({
   colorName,
   colorHex,
