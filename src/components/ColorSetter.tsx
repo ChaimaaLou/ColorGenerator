@@ -1,8 +1,7 @@
-import useColorSlider from "../hooks/useColorSlider";
 import LabelColor from "./LabelColor";
 import ToggleBar from "./ToggleBar";
-import { useEffect, useState } from "react";
 import "../assets/style.css";
+import { hexColor } from "../assets/hexColor";
 
 export default function ColorSetter({
   colorName,
@@ -13,17 +12,10 @@ export default function ColorSetter({
   colorHex: string;
   onChange: (newValue: string) => void;
 }) {
-  const [sliderValue, setSliderValue] = useState(colorHex);
-  const { hexColor } = useColorSlider(colorName, sliderValue);
-
-  useEffect(() => {
-    onChange(sliderValue);
-  }, [sliderValue, onChange]);
-
   return (
     <div className="sliderContainer">
-      <LabelColor color={colorName} hexValue={hexColor} />
-      <ToggleBar initialValue={sliderValue} onChange={setSliderValue} />
+      <LabelColor color={colorName} hexValue={hexColor(colorName, colorHex)} />
+      <ToggleBar initialValue={colorHex} onChange={onChange} />
     </div>
   );
 }

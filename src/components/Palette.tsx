@@ -3,8 +3,8 @@ import "../assets/style.css";
 import useCrDelColor from "../hooks/useCrDelColor";
 
 const Palette = () => {
-  const { colors, addRandomColor, removeColor } = useCrDelColor();
-  console.log(colors);
+  const { colors, addRandomColor, removeColor, updateColor } = useCrDelColor();
+
   return (
     <div className="palette">
       <ul style={{ display: "flex", height: "100%" }}>
@@ -14,6 +14,7 @@ const Palette = () => {
               key={index}
               color={color}
               onRemove={() => removeColor(index)}
+              onUpdate={(color) => updateColor(index, color)}
             />
           </li>
         ))}

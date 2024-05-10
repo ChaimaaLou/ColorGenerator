@@ -12,7 +12,7 @@ const ToggleBar: React.FC<ToggleBarProps> = ({ initialValue, onChange }) => {
   const [sliderValue, setSliderValue] = useState(initialValue);
   const decimalNumber: number = hexToDecimal(sliderValue);
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     const newHexValue = decimalToHex(newValue as number);
     setSliderValue(newHexValue);
     onChange(newHexValue);

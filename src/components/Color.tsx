@@ -8,9 +8,11 @@ import { useState } from "react";
 const Color = ({
   color,
   onRemove,
+  onUpdate,
 }: {
   color: string;
   onRemove: () => void;
+  onUpdate: (color: string) => void;
 }) => {
   const { color2, newRandomColor, newColor } = useUpdateColor(color);
   const [showColorSelector, setShowColorSelector] = useState(false);
@@ -22,6 +24,12 @@ const Color = ({
   const onChange = (color: string) => {
     newColor(color);
     setShowColorSelector(!showColorSelector);
+    onUpdate(color);
+  };
+
+  const handleClick = () => {
+    const color: string = newRandomColor();
+    onUpdate(color);
   };
 
   return (
@@ -31,7 +39,7 @@ const Color = ({
           <button className="icon" onClick={onRemove}>
             <MdDeleteOutline />
           </button>
-          <button className="icon" onClick={newRandomColor}>
+          <button className="icon" onClick={handleClick}>
             <IoMdRefresh />
           </button>
         </div>

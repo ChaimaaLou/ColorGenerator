@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { getRandomColor } from "../assets/getRandomColor";
 
-const useUpdateColor = (color: string) => {
-  const [color2, setColor] = useState(color);
+const useUpdateColor = (initialColor: string) => {
+  const [color2, setColor] = useState(initialColor);
 
-  const newRandomColor = () => {
+  const newRandomColor = (): string => {
     const newColorValue = getRandomColor();
     setColor(newColorValue);
+    return newColorValue;
   };
 
   const newColor = (color: string) => {

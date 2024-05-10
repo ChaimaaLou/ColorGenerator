@@ -2,7 +2,7 @@ import ColorSetter from "./ColorSetter";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 //parent component
 function ColorSelector({
@@ -12,14 +12,15 @@ function ColorSelector({
   color: string;
   onChangeColor: (color: string) => void;
 }) {
-  const [testingColor, setTestingColor] = useState(color);
-  const [substring1, setSubstring1] = useState(testingColor.substring(1, 3));
-  const [substring2, setSubstring2] = useState(testingColor.substring(3, 5));
-  const [substring3, setSubstring3] = useState(testingColor.substring(5, 7));
+  const [substring1, setSubstring1] = useState(color.substring(1, 3));
+  const [substring2, setSubstring2] = useState(color.substring(3, 5));
+  const [substring3, setSubstring3] = useState(color.substring(5, 7));
 
-  useEffect(() => {
-    setTestingColor(`#${substring1}${substring2}${substring3}`);
-  }, [substring1, substring2, substring3]);
+  const testingColor = `#${substring1}${substring2}${substring3}`;
+
+  // useEffect(() => {
+  //   onChangeColor(testingColor);
+  // }, [substring1, substring2, substring3]);
 
   return (
     <Container className="colorContainer">

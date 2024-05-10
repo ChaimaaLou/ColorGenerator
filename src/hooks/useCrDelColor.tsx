@@ -12,6 +12,16 @@ const useCrDelColor = (initialColors?: Array<string>) => {
     setColors(updatedColors);
   };
 
+  const updateColor = (indexToUpdate: number, newValue: string) => {
+    const updatedColors = colors.map((color, index) => {
+      if (index === indexToUpdate) {
+        return newValue;
+      }
+      return color;
+    });
+    setColors(updatedColors);
+  };
+
   const addRandomColor = () => {
     setColors([...colors, getRandomColor()]);
   };
@@ -22,7 +32,7 @@ const useCrDelColor = (initialColors?: Array<string>) => {
 
   console.log(colors);
 
-  return { colors, removeColor, addRandomColor, addColor };
+  return { colors, removeColor, addRandomColor, addColor, updateColor };
 };
 
 export default useCrDelColor;
